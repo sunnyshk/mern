@@ -7,7 +7,8 @@ const app = express();
 app.use(express.json());
 
 const connect = require("./configs/db");
-
+const carController = require("./controllers/car.controllers");
+app.use("/", carController);
 app.listen(5000, async () => {
   try {
     await connect();
